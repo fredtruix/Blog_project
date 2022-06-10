@@ -14,8 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+""" now we have to  import include along with path as we have below """
+from django.urls import path, include
 
+
+
+""" we have to include the file and this will tell django where to look from to get the part in our in this case blog app as we have below."""
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('blogapp.urls'))
 ]
+
+
+"""
+  ok  am going to be repeating this process try looking at the cold to see a pattern. Now go back to you urls.py in your blogapp to creatw another view
+"""
